@@ -10,23 +10,20 @@ interface ListNode {
 }
 
 const impl = (l1: ListNode, l2: ListNode): ListNode => {
-  if (l1 != null && l2 != null) {
-    // 借助一个新的头节点
-    const prehead: ListNode = { value: -1, next: null }
-    let prev = prehead
-    while (l1.value && l2.value) {
-      if (l1.value < l2.value) {
-        prev.next = l1
-        l1 = l1.next
-      } else {
-        prev.next = l2
-        l2 = l2.next
-      }
-      prev = prev.next
+  // 借助一个新的头节点
+  const prehead: ListNode = { value: -1, next: null }
+  let prev = prehead
+  while (l1 != null && l2 != null) {
+    if (l1.value < l2.value) {
+      prev.next = l1
+      l1 = l1.next
+    } else {
+      prev.next = l2
+      l2 = l2.next
     }
-    // 连接剩余节点
-    prev.next = l1 == null ? l2 : l1
-    return prehead.next
+    prev = prev.next
   }
-  return l1 || l2
+  // 连接剩余节点
+  prev.next = l1 == null ? l2 : l1
+  return prehead.next
 }
