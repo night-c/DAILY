@@ -9,7 +9,7 @@ interface ListNode {
   next: ListNode;
 }
 
-const impl = (l1: ListNode, l2: ListNode): ListNode => {
+const mergeTwoLists = (l1: ListNode, l2: ListNode): ListNode => {
   // 借助一个新的头节点
   const prehead: ListNode = { value: -1, next: null }
   let prev = prehead

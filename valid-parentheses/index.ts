@@ -15,7 +15,7 @@ const bracket = {
   '[': ']',
 }
 
-const impl = (str: string): boolean => {
+const isValid = (str: string): boolean => {
   if (str.length % 2) {
     return false
   }
@@ -35,5 +35,5 @@ const impl = (str: string): boolean => {
   return stack.length === 0
 }
 
-console.log('{{}}[]()', impl('{{}}[]()'))
-console.log('[][', impl('[]['))
+console.log('{{}}[]()', isValid('{{}}[]()'))
+console.log('[][', isValid('[]['))

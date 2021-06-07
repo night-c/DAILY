@@ -6,7 +6,7 @@
 // 链接：https://leetcode-cn.com/problems/climbing-stairs
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-const impl = (num: number): number => {
+const climbStairs = (num: number): number => {
   const nums: number[] = []
   nums[0] = nums[1] = 1
   for (let i = 2; i <= num; i++) {
@@ -15,5 +15,5 @@ const impl = (num: number): number => {
   return nums[num]
 }
 
-console.log('2', impl(2))
-console.log('10', impl(10))
+console.log('2', climbStairs(2))
+console.log('10', climbStairs(10))

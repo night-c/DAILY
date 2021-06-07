@@ -5,7 +5,7 @@
 // 链接：https://leetcode-cn.com/problems/single-number
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-const impl = (nums: number[]): number => {
+const singleNumber = (nums: number[]): number => {
   const map = Object.create(null)
   for (const num of nums) {
     if (num in map) {
@@ -21,4 +21,4 @@ const impl = (nums: number[]): number => {
   }
 }
 
-console.log('[2, 1, 1, 3, 2, 2, 1]', impl([2, 1, 1, 3, 2, 2, 1]))
+console.log('[2, 1, 1, 3, 2, 2, 1]', singleNumber([2, 1, 1, 3, 2, 2, 1]))
